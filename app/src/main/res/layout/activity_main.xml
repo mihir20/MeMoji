@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000"
     tools:context="in.memoji.mi.MainActivity"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -19,6 +20,7 @@
         android:scaleType="fitStart" />
 
     <TextView
+        android:textColor="#F8F8F8"
         android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,12 +31,13 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <Button
+        android:background="@color/colorAccent"
+        android:textColor="#fff"
         android:id="@+id/emojify_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:onClick="emojifyMe"
         android:text="@string/go"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
 
@@ -45,7 +48,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:onClick="clearImage"
         android:src="@drawable/ic_clear"
         android:visibility="gone"
         app:backgroundTint="@android:color/white"
@@ -61,7 +63,6 @@
         android:layout_marginBottom="@dimen/fab_margins"
         android:layout_marginEnd="@dimen/fab_margins"
         android:layout_marginRight="@dimen/fab_margins"
-        android:onClick="saveMe"
         android:src="@drawable/ic_save"
         android:visibility="gone"
         app:backgroundTint="@android:color/white" />
@@ -76,7 +77,6 @@
         android:layout_marginBottom="@dimen/fab_margins"
         android:layout_marginLeft="@dimen/fab_margins"
         android:layout_marginStart="@dimen/fab_margins"
-        android:onClick="shareMe"
         android:src="@drawable/ic_share"
         android:visibility="gone"
         app:backgroundTint="@android:color/white" />
