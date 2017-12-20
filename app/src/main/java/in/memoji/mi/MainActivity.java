@@ -63,9 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * OnClick method for "Emojify Me!" Button. Launches the camera app.
-     *
-     * @param view The emojify me button.
+     * OnClick method for "eMojify Me!" Button. Launches the camera app.
      */
     View.OnClickListener emojifyMe = new View.OnClickListener() {
         @Override
@@ -173,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
         mResultsBitmap = BitmapUtils.resamplePic(this, mTempPhotoPath);
 
         //facedetection on captured image
-        Emojifier.detectFaces( this, mResultsBitmap );
+       mResultsBitmap = Emojifier.detectFacesAndOverlayEmoji( this, mResultsBitmap );
 
         // Set the new bitmap to the ImageView
         mImageView.setImageBitmap(mResultsBitmap);
@@ -184,8 +182,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * OnClick method for the save button.
-     *
-     * @param view The save button.
      */
     View.OnClickListener saveMe = new View.OnClickListener() {
         @Override
@@ -199,8 +195,6 @@ public class MainActivity extends AppCompatActivity {
     };
     /**
      * OnClick method for the share button, saves and shares the new bitmap.
-     *
-     * @param view The share button.
      */
     View.OnClickListener shareMe = new View.OnClickListener() {
         @Override
@@ -218,8 +212,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * OnClick for the clear button, resets the app to original state.
-     *
-     * @param view The clear button.
      */
     View.OnClickListener clearImage = new View.OnClickListener() {
         @Override

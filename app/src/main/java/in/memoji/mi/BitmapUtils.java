@@ -26,13 +26,7 @@ public class BitmapUtils {
     private static final String FILE_PROVIDER_AUTHORITY = "in.memoji.mi.fileprovider";
 
 
-    /**
-     * Resamples the captured photo to fit the screen for better memory usage.
-     *
-     * @param context   The application context.
-     * @param imagePath The path of the photo to be resampled.
-     * @return The resampled bitmap
-     */
+    //resizes picture for improved memory usage
     static Bitmap resamplePic(Context context, String imagePath) {
 
         // Get device screen size information
@@ -62,9 +56,6 @@ public class BitmapUtils {
 
     /**
      * Creates the temporary image file in the cache directory.
-     *
-     * @return The temporary image file.
-     * @throws IOException Thrown if there is an error creating the file
      */
     static File createTempImageFile(Context context) throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",
@@ -81,9 +72,6 @@ public class BitmapUtils {
 
     /**
      * Deletes image file for a given path.
-     *
-     * @param context   The application context.
-     * @param imagePath The path of the photo to be deleted.
      */
     static boolean deleteImageFile(Context context, String imagePath) {
         // Get the file
@@ -104,8 +92,6 @@ public class BitmapUtils {
     /**
      * Helper method for adding the photo to the system photo gallery so it can be accessed
      * from other apps.
-     *
-     * @param imagePath The path of the saved image
      */
     private static void galleryAddPic(Context context, String imagePath) {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
@@ -118,10 +104,6 @@ public class BitmapUtils {
 
     /**
      * Helper method for saving the image.
-     *
-     * @param context The application context.
-     * @param image   The image to be saved.
-     * @return The path of the saved image.
      */
     static String saveImage(Context context, Bitmap image) {
 
@@ -133,7 +115,7 @@ public class BitmapUtils {
         String imageFileName = "JPEG_" + timeStamp + ".jpg";
         File storageDir = new File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                        + "/Emojify");
+                        + "/MeMojified");
         boolean success = true;
         if (!storageDir.exists()) {
             success = storageDir.mkdirs();
@@ -164,9 +146,6 @@ public class BitmapUtils {
 
     /**
      * Helper method for sharing an image.
-     *
-     * @param context   The image context.
-     * @param imagePath The path of the image to be shared.
      */
     static void shareImage(Context context, String imagePath) {
         // Create the share intent and start the share activity
